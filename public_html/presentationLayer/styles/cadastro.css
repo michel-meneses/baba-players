@@ -1,0 +1,55 @@
+body{
+    background-color: green;
+    margin: 16px;
+    text-align: center;
+}
+
+h1{
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0.5px 1px black;
+    font-size: 68px;
+    font-family: fantasy;
+}
+
+h2{
+    color: white;
+    text-shadow: 0.5px 1px black;
+    font-size: 42px;
+    font-family: fantasy;
+}
+
+input{
+    width: 360px;
+    height: 48px;
+    font-size: 16px;
+    margin-top: 16px;
+    font-family: fantasy;
+    color: orange;
+}
+
+select{
+    width: 360px;
+    height: 48px;
+    font-size: 16px;
+    font-family: fantasy;
+    color: orange;
+}
+
+p{
+    color: white;
+    text-shadow: 0.5px 1px black;
+    font-size: 18px;
+    font-family: fantasy;
+}
+
+button{
+    background-color: orange;
+    width: 360px;
+    height: 48px;
+    font-size: 16px;
+    margin-top: 16px;
+    font-family: fantasy;
+    text-transform: uppercase;
+    color: white;
+}

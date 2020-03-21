@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>BabaPlayers</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../styles/cadastro.css">
+    </head>
+    <body>
+        <h1>Baba Players</h1>
+        <h2>Encontre jogadores para o seu próximo baba!</h2>
+        <br>
+        <form>
+            <input id="txt_nome" type="text" placeholder="nome">
+            <br>
+            <input id="txt_email" type="email" placeholder="email">
+            <br>
+            <input id="txt_senha" type="password" placeholder="senha">
+            <br>
+            <p>Qual a sua posição?</p>
+            <select id="sel_posicao" name="Posição">
+                <option value="GOL">Goleiro</option>
+                <option value="DEF">Zagueiro</option>
+                <option value="MEI">Meia</option>
+                <option value="ATA">Atacante</option>
+            </select>
+        </form>
+        <br>
+        <button id="btn_cadastrar">Cadastrar</button>
+        
+        <script src="../../domainLayer/models/usuario.js"></script>
+        <script src="../../domainLayer/interactors/cadastrarInteractor.js"></script>
+        <script src="../../dataLayer/repositories/usuarioRepository.js"></script>
+        <script src="../../dataLayer/dataSources/localStorageDataSource.js"></script>
+        <script src="../presenters/cadastroPresenter.js"></script>
+        <script src="../views/cadastroView.js"></script>
+    </body>
+</html>
