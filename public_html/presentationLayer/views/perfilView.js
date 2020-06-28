@@ -1,18 +1,18 @@
 
 /**
- * Recupera email passado como parâmetro para esta tela.
+ * Gets the email given as a parameter to this view.
  */
 
 var email = decodeURIComponent(window.location.search.match(/(\?|&)email\=([^&]*)/)[2]);
 
 /**
- * Instancia apresentador.
+ * Instanciate presenter.
  */
 
 var presenter = new PerfilPresenter(this, email);
 
 /**
- * Configura listener do botão de voltar.
+ * Set up return button's listener.
  */
 
 document.getElementById("btn_sair").onclick = function(){
@@ -20,9 +20,9 @@ document.getElementById("btn_sair").onclick = function(){
 }
 
 /**
- * Carrega o nome do usuário.
+ * Set user's name.
  * 
- * @param {String} nome Nome do usuário
+ * @param {String} nome User's name
  */
 
 function setNome(nome){
@@ -31,9 +31,9 @@ function setNome(nome){
 
 /**
  * 
- * Carrega o email do usuário.
+ * Set user's email.
  * 
- * @param {String} email Email do usuário
+ * @param {String} email User's email
  */
 
 function setEmail(email){
@@ -42,9 +42,9 @@ function setEmail(email){
 
 /**
  * 
- * Carrega a posição do usuário.
+ * Set user's game position.
  * 
- * @param {String} posicao Posição do usuário
+ * @param {String} posicao User's game position
  */
 
 function setPosicao(posicao){
@@ -53,7 +53,7 @@ function setPosicao(posicao){
 
 /**
  * 
- * Exibe mensagem ao usuário.
+ * Shows message to the user.
  * 
  * @param {String} mensagem
  */
@@ -63,7 +63,7 @@ function mostrarMensagem(mensagem){
 }
 
 /**
- * Navega para a tela principal.
+ * Go back to the initial view.
  */
 
 function navegarTelaPrincipal(){
@@ -71,7 +71,7 @@ function navegarTelaPrincipal(){
 }
 
 /**
- * Inicia cilco de vida do apresentador.
+ * Start-up presenter's lifecycle.
  */
 
 presenter.resume();

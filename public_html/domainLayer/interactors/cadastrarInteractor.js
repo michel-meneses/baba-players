@@ -1,15 +1,15 @@
 var CadastrarInteractor = function (usuario, usuarioRepository){    
     
     /**
-     * Único método do caso de uso.
-     * @returns {Promise} resultado do caso de uso
+     * Only method of this repository.
+     * @returns {Promise} result of this use case
      */
     
     this.run = function(){
         return new Promise(function(resolve, reject){
            
             /**
-             * Verifica se o usuário é válido.
+             * Check if the user is valid.
              */
             
             if(!usuario || !usuario.validar()){
@@ -17,7 +17,7 @@ var CadastrarInteractor = function (usuario, usuarioRepository){
             }
             
             /**
-             * Insere usuário no repositório.
+             * Insert user into the repository.
              */
             
             usuarioRepository.criar(usuario).then(function(fulfilled){

@@ -1,23 +1,23 @@
 
 /**
  * 
- * @param {type} email Email do usuário buscado
- * @param {type} usuarioRepository Implementação de repositório de usuário
- * @returns {BuscarInteractor} Caso de uso referente à busca de usuário
+ * @param {type} email User's email
+ * @param {type} usuarioRepository Implementation of a user repository
+ * @returns {BuscarInteractor} Use case related to user search
  */
 
 var BuscarInteractor = function (email, usuarioRepository){    
     
     /**
-     * Único método do caso de uso.
-     * @returns {Promise} resultado do caso de uso
+     * Only method of this use case.
+     * @returns {Promise} use case result
      */
     
     this.run = function(){
         return new Promise(function(resolve, reject){
            
             /**
-             * Verifica se o email é válido.
+             * Check if the email is valid.
              */
             
             if(!email){
@@ -25,7 +25,7 @@ var BuscarInteractor = function (email, usuarioRepository){
             }
             
             /**
-             * Busca usuário no repositório.
+             * Use the repository to search for the user.
              */
             
             usuarioRepository.buscar(email).then(function(usuario){

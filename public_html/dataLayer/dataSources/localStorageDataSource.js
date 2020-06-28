@@ -1,31 +1,30 @@
 
 /**
  * 
- * @returns {LocalStorageDataSource} Fonte de dados local
+ * @returns {LocalStorageDataSource} Local data source
  */
 
 var LocalStorageDataSource = function(){
     
     /**
-     * Armazena persistentemente um determinado valor e o associa
-     * a uma chave de acesso.
+     * Persistenly stores a given value associated to an access key.
      * 
-     * @param {String} dado Dado a ser armazenado
-     * @param {String} chave Chave associada ao dado
-     * @returns {Boolean} Armazenamento realizado com sucesso?
+     * @param {String} dado Data to be stored
+     * @param {String} chave Key assossiated to the data
+     * @returns {Boolean} Was the data successfuly stored?
      */
     
     this.armazenar = function(dado, chave){        
         
         /**
-         * Verifica se o cliente possui o recurso de armazenação em questão.
+         * Check if the client has the required store resource.
          */
         
         if(typeof(Storage) === "undefined")
             return false;
         
         /**
-         * Armazena dado.
+         * Save data.
          */
         
         localStorage.setItem(chave, dado);
@@ -33,23 +32,23 @@ var LocalStorageDataSource = function(){
     };
     
     /**
-     * Busca um determinado valor com base na sua chave de acesso.
+     * Search data based on its access key.
      * 
-     * @param {String} chave Chave associada ao dado
-     * @returns {String} Dado buscado
+     * @param {String} chave Key assossiated to the value
+     * @returns {String} Searched data
      */
     
     this.buscar = function(chave){        
         
         /**
-         * Verifica se o cliente possui o recurso de armazenação em questão.
+         * Check if the client has the required store resource.
          */
         
         if(typeof(Storage) === "undefined")
             return false;
         
         /**
-         * Retorna dado.
+         * Return data.
          */
         
         return localStorage.getItem(chave);
