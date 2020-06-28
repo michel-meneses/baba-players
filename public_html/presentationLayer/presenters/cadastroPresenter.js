@@ -1,7 +1,7 @@
 function CadastroPresenter(cadastroView){
     
     /**
-     * Inicializa view.
+     * Set up view.
      */
     
     this.view = cadastroView;
@@ -9,7 +9,7 @@ function CadastroPresenter(cadastroView){
     this.botaoCadastrarPressionado = function(){
         
         /**
-         * Recupera dados do cadastro.
+         * Get signup data.
          */
         
         var nome = this.view.getNome();
@@ -18,7 +18,7 @@ function CadastroPresenter(cadastroView){
         var posicao = this.view.getPosicao();
         
         /**
-         * Inicializa model, repository e interactor.
+         * Set up model, repository and interactor.
          */
         
         this.model = new Usuario(nome, posicao, email, senha);
@@ -26,7 +26,7 @@ function CadastroPresenter(cadastroView){
         this.interactor = new CadastrarInteractor(this.model, this.repository);
         
         /**
-         * Executa o caso de uso.
+         * Runs use case.
          */
         
         var presenter = this;

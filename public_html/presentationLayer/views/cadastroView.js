@@ -22,9 +22,9 @@ function mostrarMensagem(mensagem){
 
 /**
  * 
- * Abre a tela de perfil do usuário
+ * Opens user's profile view
  * 
- * @param {String} email Email do usuário dono do perfil
+ * @param {String} email User's email
  */
 
 function navegarTelaPerfil(email){

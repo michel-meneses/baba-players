@@ -1,60 +1,60 @@
 
 /**
  * 
- * @param {PerfilView} perfilView Tela de perfil de usuário
- * @param {String} email Email do usuário dono do perfil 
- * @returns {PerfilPresenter} Apresentador da tela de perfil de usuário
+ * @param {PerfilView} perfilView User's profile screen
+ * @param {String} email User's email  
+ * @returns {PerfilPresenter} Presenter of the user's profile screen
  */
 
 function PerfilPresenter(perfilView, email){
     
     /**
-     * Inicializa view.
+     * Set up view.
      */
     
     this.view = perfilView;
     
     /**
-     * Armazena email.
+     * Save email.
      */
     
     this.email = email;
     
     /**
-     * Avisa o apresentador que o usuário pressionou o botão de voltar.
+     * Tells to the presenter the user pressed the return button.
      */
     
     this.botaoVoltarPressionado = function(){
         
         /**
-         * Solicita à tela que navegue para a tela inicial.
+         * Asks the view to go back to the initial view.
          */
         
         perfilView.navegarTelaPrincipal();
     };
     
     /**
-     * Inicia ciclo de vida do apresentador.
+     * Starts presenter's lifecycle.
      */
     
     this.resume = function(){
         
         /**
-         * Inicializa caso de uso de busca de usuário e suas dependências.
+         * Set up user search use case and its dependencies.
          */
         
         this.repository = new UsuarioRepository();
         this.interactor = new BuscarInteractor(this.email, this.repository);
         
         /**
-         * Executa caso de uso.
+         * Runs use case.
          */
         
         var presenter = this;
         this.interactor.run().then(function(usuario){
             
             /**
-             * Carrega na tela os dados do usuário encontrado.
+             * Load user data into the view.
              */
             
             presenter.view.setNome(usuario.nome);
@@ -77,8 +77,7 @@ function PerfilPresenter(perfilView, email){
         }).catch(function(error){
             
             /**
-             * Exibe mensagem de erro e solicita à tela que navegue
-             * para a tela inicial.
+             * Shows an error message and asks the view to to go back to the initial view.
              */
             
             presenter.view.mostrarMensagem("Falha ao recuperar dados do perfil: " + error);
